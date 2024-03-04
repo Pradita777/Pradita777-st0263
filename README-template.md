@@ -74,6 +74,6 @@ No logre conectar el pclient con otro pserver para el download de archivos, no l
 
 # referencias:
 <debemos siempre reconocer los créditos de partes del código que reutilizaremos, así como referencias a youtube, o referencias bibliográficas utilizadas para desarrollar el proyecto o la actividad>
-## https://chat.openai.com 
+### https://chat.openai.com 
 ## https://github.com/st0263eafit/st0263-241/blob/main/README-template.md
 ## url de donde tomo info para desarrollar este proyecto
