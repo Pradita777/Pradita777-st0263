@@ -8,8 +8,7 @@
 # Reto 1 y 2 Conexión pear to pear
 #
 # 1. breve descripción de la actividad
-#
-<La idea del proyecto es crear una red pear to pear con un servidor central, esto para que cada pear carge o descargue archivos.>
+# La idea del proyecto es crear una red pear to pear con un servidor central, esto para que cada pear carge o descargue archivos.
 ## 1.1. Que aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 ### Cumpli con crear el servidor central, el pserver y el pclient, la comunicacion entre el pserver y el servidor central, montar a docker el servidor central y montarlo a una instancia de aws, que al conectarse con el pserver lo agregara a su lista.
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
@@ -27,25 +26,26 @@ No logre conectar el pclient con otro pserver para el download de archivos, no l
 ## detalles técnicos
 ## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
 ## opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
-## 
+## ![image](https://github.com/Pradita777/pradita777-st0263/assets/92939800/df0c36aa-d252-4dbf-8c8e-f0263bffd350)
+
 ## opcionalmente - si quiere mostrar resultados o pantallazos 
 
 # 4. Descripción del ambiente de EJECUCIÓN (en producción) lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
 
 # IP o nombres de dominio en nube o en la máquina servidor.
-
+## Se uso AWS para este proyecto, tambien se trabajo de forma local, no se uso dominio se trabajo por ip.
 ## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-
+## Para el uso de AWS es necesario que cada puerto que vayamos a usar lo definamos en las llaves de seguridad de las instancias si no no podremos comunicarnos con el puerto, es importante en el pserver cambiar la ip del servidor central cada que cambie.
 ## como se lanza el servidor.
-
+## uvicorn serverc:app --reload 
 ## una mini guia de como un usuario utilizaría el software o la aplicación
-
+## https://eafit.sharepoint.com/:v:/s/siuu/EdTWeUxgiyJHkRD_intHZdoBBmBKSfhWY6zvdonM1hq4mQ?e=hrXef2
 ## opcionalmente - si quiere mostrar resultados o pantallazos 
 
 # 5. otra información que considere relevante para esta actividad.
 
 # referencias:
 <debemos siempre reconocer los créditos de partes del código que reutilizaremos, así como referencias a youtube, o referencias bibliográficas utilizadas para desarrollar el proyecto o la actividad>
-## sitio1-url 
-## sitio2-url
+## https://chat.openai.com 
+## https://github.com/st0263eafit/st0263-241/blob/main/README-template.md
 ## url de donde tomo info para desarrollar este proyecto
