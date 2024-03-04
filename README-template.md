@@ -1,27 +1,28 @@
 # info de la materia: STxxxx <nombre>
 #
-# Estudiante(s): nombre, email-eafit
+# Estudiante(s): Andres Prada Rodriguez, apradar@eafit.edu.co
 #
-# Profesor: nombre, email-eafit
+# Profesor: Edwin Nelson Montoya Munera, emontoya@eafit.edu.co
 #
-# <para borrar: EL OBJETIVO DE ESTA DOCUMENTACÍON ES QUE CUALQUIER LECTOR CON EL REPO, EN ESPECIAL EL PROFESOR, ENTIENDA EL ALCANCE DE LO DESARROLLADO Y QUE PUEDA REPRODUCIR SIN EL ESTUDIANTE EL AMBIENTE DE DESARROLLO Y EJECUTAR Y USAR LA APLICACIÓN SIN PROBLEMAS>
 
-# <para borrar: renombre este archivo a README.md cuando lo vaya a usar en un caso específico>
-
-# nombre del proyecto, lab o actividad
+# Reto 1 y 2 Conexión pear to pear
 #
 # 1. breve descripción de la actividad
 #
-<texto descriptivo>
+<La idea del proyecto es crear una red pear to pear con un servidor central, esto para que cada pear carge o descargue archivos.>
 ## 1.1. Que aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
-
+### Cumpli con crear el servidor central, el pserver y el pclient, la comunicacion entre el pserver y el servidor central, montar a docker el servidor central y montarlo a una instancia de aws, que al conectarse con el pserver lo agregara a su lista.
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
-
+No logre conectar el pclient con otro pserver para el download de archivos, no logre el logout del servidor central, no logre montar a docker el pserver y el pclient, como tampoco los monte a aws.
 # 2. información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
-
+## El diseño de alto nivel del proyecto se basa en una arquitectura cliente-servidor distribuida, donde el servidor central actúa como punto centralizado de coordinación y los pares gestionan el almacenamiento y distribución de archivos.
 # 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
-
+## Python 3.12.2 
+## Requistos: grpcio grpcio-tools fastapi uvicorn docker Es necesario tener descargadas las librerias anteriores y docker en el computador. 
 ## como se compila y ejecuta.
+### para ejecutar el servidor central: uvicorn serverc:app --reload 
+### para ejecutar el pserver: python peer_server.py 
+### para ejecutar el pclient: python peer_client.py download "nombre_archivo.txt" python peer_client.py upload "nombre_archivo.txt"
 ## detalles del desarrollo.
 ## detalles técnicos
 ## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
