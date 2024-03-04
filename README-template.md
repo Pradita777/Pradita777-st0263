@@ -1,4 +1,4 @@
-# info de la materia: STxxxx <nombre>
+# info de la materia: Topicos Especias En Telematica
 #
 # Estudiante(s): Andres Prada Rodriguez, apradar@eafit.edu.co
 #
@@ -8,7 +8,7 @@
 # Reto 1 y 2 Conexión pear to pear
 #
 # 1. breve descripción de la actividad
-# La idea del proyecto es crear una red pear to pear con un servidor central, esto para que cada pear carge o descargue archivos.
+# El proyecto "pserver", "pclient" y "server central" es un sistema distribuido que permite a los clientes cargar y descargar archivos a través de un servidor central y una red de pares (peers). Los pares actúan como nodos en la red y almacenan una copia de los archivos disponibles para compartir.
 ## 1.1. Que aspectos cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
 ### Cumpli con crear el servidor central, el pserver y el pclient, la comunicacion entre el pserver y el servidor central, montar a docker el servidor central y montarlo a una instancia de aws, que al conectarse con el pserver lo agregara a su lista.
 ## 1.2. Que aspectos NO cumplió o desarrolló de la actividad propuesta por el profesor (requerimientos funcionales y no funcionales)
@@ -16,16 +16,44 @@ No logre conectar el pclient con otro pserver para el download de archivos, no l
 # 2. información general de diseño de alto nivel, arquitectura, patrones, mejores prácticas utilizadas.
 ## El diseño de alto nivel del proyecto se basa en una arquitectura cliente-servidor distribuida, donde el servidor central actúa como punto centralizado de coordinación y los pares gestionan el almacenamiento y distribución de archivos.
 # 3. Descripción del ambiente de desarrollo y técnico: lenguaje de programación, librerias, paquetes, etc, con sus numeros de versiones.
-## Python 3.12.2 
+## Se uso Python 3.12.2 
 ## Requistos: grpcio grpcio-tools fastapi uvicorn docker Es necesario tener descargadas las librerias anteriores y docker en el computador. 
 ## como se compila y ejecuta.
 ### para ejecutar el servidor central: uvicorn serverc:app --reload 
 ### para ejecutar el pserver: python peer_server.py 
 ### para ejecutar el pclient: python peer_client.py download "nombre_archivo.txt" python peer_client.py upload "nombre_archivo.txt"
 ## detalles del desarrollo.
+### Pserver (Peer Server) 
+## El servidor de pares se implementó utilizando el lenguaje de programación Python y el framework de desarrollo de aplicaciones web FastAPI. 
+## Se diseñó para manejar las solicitudes de carga y descarga de archivos de los clientes mediante comunicación RPC utilizando gRPC. 
+## Se definieron los métodos UploadFile y DownloadFile en el servicio gRPC PeerService para manejar las solicitudes de carga y descarga de archivos, respectivamente. 
+## Se utilizó la biblioteca concurrent.futures para manejar las conexiones concurrentes entrantes y salientes.
+## Pclient (Peer Client)
+## El cliente de pares se implementó como una interfaz de línea de comandos (CLI) utilizando el lenguaje de programación Python y la biblioteca gRPC para comunicarse con el servidor de pares.
+## Se implementaron los métodos upload_file y download_file para permitir a los usuarios cargar y descargar archivos desde la línea de comandos.
+## Se utilizó la biblioteca argparse para analizar los argumentos de la línea de comandos proporcionados por el usuario.
+## Server Central
+## El servidor central se implementó como una aplicación web utilizando el framework FastAPI para manejar las solicitudes de registro de pares y búsquedas de archivos.
+## Se definieron las rutas /register y /search/{filename} para manejar las solicitudes de registro de pares y búsquedas de archivos, respectivamente.
+## Se utilizó la biblioteca requests para realizar solicitudes HTTP a los pares y coordinar el registro y la búsqueda de archivos en la red.
 ## detalles técnicos
-## descripción y como se configura los parámetros del proyecto (ej: ip, puertos, conexión a bases de datos, variables de ambiente, parámetros, etc)
-## opcional - detalles de la organización del código por carpetas o descripción de algún archivo. (ESTRUCTURA DE DIRECTORIOS Y ARCHIVOS IMPORTANTE DEL PROYECTO, comando 'tree' de linux)
+## Lenguaje de Programación: Python
+## Frameworks y Bibliotecas:
+## FastAPI: Framework web para construir APIs rápidas con Python.
+## gRPC: Framework para la implementación de servicios RPC (Remote Procedure Call).
+## Requests: Biblioteca HTTP para realizar solicitudes web en Python.
+## Herramientas:
+## Concurrency in Python: Módulo concurrent.futures para manejar la concurrencia en Python.
+## Argument Parsing: Biblioteca argparse para analizar los argumentos de la línea de comandos.
+## Entorno de Desarrollo:
+## Sistema Operativo: Windows, Ubuntu
+## Entorno de Desarrollo: VisualStudio
+## Herramientas de Control de Versiones: Git
+## Dependencias del Proyecto:
+### fastapi
+### grpcio
+### requests
+### concurrent.futures
 ## ![image](https://github.com/Pradita777/pradita777-st0263/assets/92939800/df0c36aa-d252-4dbf-8c8e-f0263bffd350)
 
 ## opcionalmente - si quiere mostrar resultados o pantallazos 
